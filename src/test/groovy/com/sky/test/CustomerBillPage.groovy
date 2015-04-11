@@ -12,4 +12,8 @@ class CustomerBillPage extends Page {
     
     static at = { title == "My Bill" }
 	
+	static content = {
+		totalDue { $("div", id:"totalDue") }
+	}
+	
 }
