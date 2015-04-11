@@ -1,0 +1,25 @@
+apply plugin: "groovy"
+apply plugin: "eclipse"
+
+defaultTasks "clean", "test"
+
+repositories { mavenCentral() }
+
+dependencies {
+	testCompile "org.codehaus.groovy:groovy-all:2.3.11"
+	testCompile "org.gebish:geb-spock:0.10.0"
+	testCompile "org.spockframework:spock-core:1.0-groovy-2.3"
+	testCompile "org.seleniumhq.selenium:selenium-htmlunit-driver:2.45.0"
+}
+
+test {
+	systemProperties "geb.build.reportsDir": "$reportsDir/geb"
+	systemProperties "geb.build.baseUrl": "http://localhost:9000/"
+}
+
+test {
+	testLogging { exceptionFormat = 'full' }
+}
+
+
+task wrapper(type: Wrapper) { gradleVersion = "2.3" }
