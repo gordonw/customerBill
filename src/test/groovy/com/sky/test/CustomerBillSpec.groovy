@@ -17,22 +17,23 @@ import com.sky.Application
 @WebIntegrationTest
 class CustomerBillSpec extends GebSpec {
 
-	def "Customer bill can be viewed"() {
-		when: "A customer views their bill"
-		to CustomerBillPage
-
-		then: "The customer bill is displayed"
+	def setup() {
+		to CustomerBillPage		
 		at CustomerBillPage
+	}
+	
+	def "Customer bill has correct page heading"() {
+		expect: "The customer bill page is displayed"
+		assert billTitle.text() == "Current Bill"
 	}
 		
 	def "Customer bill contains a total"() {
-		when: "A customer views their bill"
-		to CustomerBillPage
-
-		then: "The customer bill is displayed"
-		at CustomerBillPage
-		
-		and: "The bill contains a total"
+		expect: "The bill contains a total"
 		assert totalDue.text() == "Total due on 25/01/2015: £136.03"
+	}
+	
+	def "Customer bill contains statement dates"(){
+		expect: "The bill contains a generated date"
+		assert statementDates.text() == "Generated on 11/01/2015 for bill period: 26/01/2015 - 25/02/2015"
 	}
 }

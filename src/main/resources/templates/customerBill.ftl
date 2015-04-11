@@ -12,6 +12,11 @@
 <body>
   <div class="container">
   
+  <div class="page-header">
+    <h1 id="billTitle">Current Bill</h1>
+    <p id="statementDates">Generated on ${generatedDate} for bill period: ${fromDate} - ${toDate}</p>
+  </div>
+  
   <div id="totalDue" class="alert alert-info" role="alert">
     Total due on ${dueDate}: <strong class="pull-right">${totalDue?string.currency}</strong>
   </div>

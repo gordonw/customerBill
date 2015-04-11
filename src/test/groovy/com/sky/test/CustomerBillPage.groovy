@@ -14,6 +14,11 @@ class CustomerBillPage extends Page {
 	
 	static content = {
 		totalDue { $("div", id:"totalDue") }
+		billTitle { $("h1", id:"billTitle") }
+		statementDates { $("p", id:"statementDates") }
+		
 	}
 	
 }
+
+
