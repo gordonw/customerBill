@@ -21,6 +21,36 @@
     Total due on ${dueDate}: <strong class="pull-right">${totalDue?string.currency}</strong>
   </div>
   
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title" id="packageBreakdownTitle">Your Sky Package</h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped" id="skyPackage">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+        <#list subscriptions as item>
+          <tr>
+            <td>${item.name}</td>
+            <td>${item.type}</td>
+            <td>${item.cost?string.currency}</td>
+          </tr>
+        </#list>
+        </tbody>
+      </table>	  
+      </div>
+     <div class="panel-footer" id="packageTotal">Sky package total: ${packageTotal?string.currency}</div>
+  </div>
+  
+  
+  
+  
   
   </div> <!-- /container -->
 </body>

@@ -24,7 +24,8 @@ class CustomerBillController {
 		model.addAttribute("generatedDate", convertToDisplayDate(json.statement.generated))
 		model.addAttribute("fromDate", convertToDisplayDate(json.statement.period.from))
 		model.addAttribute("toDate", convertToDisplayDate(json.statement.period.to))
-		
+		model.addAttribute("subscriptions", json.package.subscriptions)
+		model.addAttribute("packageTotal", json.package.total)
 		"customerBill"
 	}
 
