@@ -8,8 +8,8 @@ import geb.Page
  */
 class CustomerBillPage extends Page {
 
-    static url = "/myBill"
+    static url = "/customerBill"
     
     static at = { title == "My Bill" }
-   
+	
 }
