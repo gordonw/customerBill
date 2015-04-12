@@ -91,16 +91,37 @@ class CustomerBillSpec extends GebSpec {
 		and: 'The total call cost is displayed'
 		assert callCost.text() == 'Call charges total: £59.64'
 	}
+	
+	def 'Customer bill contains store charges'(){
+		expect: 'The store charges section has the correct title'
+		assert storeSectionTitle.text() == 'Sky Store Charges'
 
-	private void verifyPackageDetails( packageDetails, expectedDetails ) {
-		assert packageDetails.name == expectedDetails[0]
-		assert packageDetails.type == expectedDetails[1]
-		assert packageDetails.cost == expectedDetails[2]
+		and: 'The rentals section is displayed'
+		assert rentalsTitle.text() == "Rentals"
+		verifyStoreItem( rentalsItems[0], ['50 Shades of Grey', '4.99'] )
+		
+		and: 'The buy and keep section is displayed'
+		assert buyTitle.text() == "Buy and Keep"
+		verifyStoreItem( buyAndKeepItems[0], ["That's what she said", '9.99'] )
+		verifyStoreItem( buyAndKeepItems[1], ['Broke back mountain', '9.99'] )	
+		
+		assert storeCost.text() == 'Sky store total: £24.97'
 	}
 	
-	private void verifyCallDetails( callDetails, expectedDetails ){
-		assert callDetails.called == expectedDetails[0]
-		assert callDetails.duration == expectedDetails[1]
-		assert callDetails.cost == expectedDetails[2]
+	private void verifyStoreItem( item, expectedDetails ) {
+		assert item.title == expectedDetails[0]
+		assert item.cost == expectedDetails[1]
+	}
+
+	private void verifyPackageDetails( item, expectedDetails ) {
+		assert item.name == expectedDetails[0]
+		assert item.type == expectedDetails[1]
+		assert item.cost == expectedDetails[2]
+	}
+	
+	private void verifyCallDetails( item, expectedDetails ){
+		assert item.called == expectedDetails[0]
+		assert item.duration == expectedDetails[1]
+		assert item.cost == expectedDetails[2]
 	}
 }

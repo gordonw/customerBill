@@ -27,7 +27,17 @@ class CustomerBillPage extends Page {
 			$("table#callCharges tbody tr").collect{  module CallChargesElement, it  }
 		}
 		callCost{ $("div", id:"callCost") }
-		
+
+		storeSectionTitle{ $("h3", id:"storeTitle") }
+		rentalsTitle{ $("h4", id:"rentalsTitle") }
+		rentalsItems {
+			$("table#rentals tbody tr").collect{  module StoreElement, it  }
+		}
+		buyTitle{ $("h4", id:"buyTitle") }
+		buyAndKeepItems {
+			$("table#buyAndKeep tbody tr").collect{  module StoreElement, it  }
+		}
+		storeCost{ $("div", id:"storeCost") }
 	}
 
 }
@@ -49,3 +59,12 @@ class SkyPackageElement extends Module {
 		cost { cell(2).text() }
 	}
 }
+
+class StoreElement extends Module {
+	static content = {
+		cell { i -> $("td", i) }
+		title { cell(0).text() }
+		cost { cell(1).text() }
+	}
+}
+
