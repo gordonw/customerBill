@@ -8,6 +8,13 @@ import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.RequestMapping
 
+/**
+ * Spring controller that serves up the customer bill. The JSON containing the bill information 
+ * is mapped to a slightly flatter model and then passed back to the view for processing. 
+ * 
+ * @author whamondg
+ *
+ */
 @Controller
 class CustomerBillController {
 
