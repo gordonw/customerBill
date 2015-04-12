@@ -18,15 +18,27 @@ class CustomerBillPage extends Page {
 		billTitle { $("h1", id:"billTitle") }
 		statementDates { $("p", id:"statementDates") }
 		packageSectionTitle { $("h3", id:"packageSectionTitle") }
-		packageSectionDetails {
-			$("table#packageSectionDetails tbody tr").collect{  module SkyPackageElement, it  }
+		packageDetails {
+			$("table#packageDetails tbody tr").collect{  module SkyPackageElement, it  }
 		}
-		packageSectionTotal { $("div", id:"packageSectionTotal") }
+		packageCost { $("div", id:"packageCost") }
 		callChargesSectionTitle { $("h3", id:"callChargesTitle") }
-		
+		callCharges {
+			$("table#callCharges tbody tr").collect{  module CallChargesElement, it  }
+		}
+		callCost{ $("div", id:"callCost") }
 		
 	}
 
+}
+
+class CallChargesElement extends Module {
+	static content = {
+		cell { i -> $("td", i) }
+		called { cell(0).text() }
+		duration { cell(1).text() }
+		cost { cell(2).text() }
+	}
 }
 
 class SkyPackageElement extends Module {
