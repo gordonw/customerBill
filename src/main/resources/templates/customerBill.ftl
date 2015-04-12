@@ -23,10 +23,10 @@
   
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title" id="packageBreakdownTitle">Your Sky Package</h3>
+      <h3 id="packageSectionTitle" class="panel-title">Your Sky Package</h3>
     </div>
     <div class="panel-body">
-      <table class="table table-striped" id="skyPackage">
+      <table id="packageSectionDetails" class="table table-striped">
         <thead>
           <tr>
             <th>Name</th>
@@ -45,7 +45,44 @@
         </tbody>
       </table>	  
       </div>
-     <div class="panel-footer" id="packageTotal">Sky package total: ${packageTotal?string.currency}</div>
+     <div id="packageSectionTotal" class="panel-footer">Sky package total: ${packageTotal?string.currency}</div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 id="callChargesTitle" class="panel-title">Call Charges</h3>
+    </div>
+    <div class="panel-body">
+      
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Called</th>
+          <th>Duration</th>
+          <th>Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>07716393769</td>
+          <td>00:23:03</td>
+          <td>&pound;5.00</td>
+        </tr>
+        <tr>
+          <td>07716393769</td>
+          <td>00:23:03</td>
+          <td>&pound;5.00</td>
+        </tr>
+        <tr>
+          <td>07716393769</td>
+          <td>00:23:03</td>
+          <td>&pound;5.00</td>
+        </tr>
+      </tbody>
+    </table>
+	  
+    </div>
+    <div class="panel-footer">Call charges total: &pound;43.40</div>
   </div>
   
   

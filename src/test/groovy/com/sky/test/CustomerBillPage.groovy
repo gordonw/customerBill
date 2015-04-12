@@ -17,11 +17,14 @@ class CustomerBillPage extends Page {
 		totalDue { $("div", id:"totalDue") }
 		billTitle { $("h1", id:"billTitle") }
 		statementDates { $("p", id:"statementDates") }
-		packageBreakdownTitle { $("h3", id:"packageBreakdownTitle") }
-		packageBreakdown {
-			$("table#skyPackage tbody tr").collect{  module SkyPackageElement, it  }
+		packageSectionTitle { $("h3", id:"packageSectionTitle") }
+		packageSectionDetails {
+			$("table#packageSectionDetails tbody tr").collect{  module SkyPackageElement, it  }
 		}
-		packageTotal { $("div", id:"packageTotal") }
+		packageSectionTotal { $("div", id:"packageSectionTotal") }
+		callChargesSectionTitle { $("h3", id:"callChargesTitle") }
+		
+		
 	}
 
 }

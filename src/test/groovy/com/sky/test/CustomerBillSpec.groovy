@@ -39,25 +39,37 @@ class CustomerBillSpec extends GebSpec {
 	
 	def "Customer bill contains Sky package breakdown"(){
 		expect: "The Sky package section has the correct title"
-		assert packageBreakdownTitle.text() == "Your Sky Package"
+		assert packageSectionTitle.text() == "Your Sky Package"
 	
 		and: "The subscription breakdown is displayed"
-		assert packageBreakdown.size() == 3
-		assert packageBreakdown[0].name == 'Variety with Movies HD'
-		assert packageBreakdown[0].type == 'tv'
-		assert packageBreakdown[0].cost == '£50.00'
+		assert packageSectionDetails.size() == 3
+		assert packageSectionDetails[0].name == 'Variety with Movies HD'
+		assert packageSectionDetails[0].type == 'tv'
+		assert packageSectionDetails[0].cost == '£50.00'
 
-		assert packageBreakdown[1].name == 'Sky Talk Anytime'
-		assert packageBreakdown[1].type == 'talk'
-		assert packageBreakdown[1].cost == '£5.00'
+		assert packageSectionDetails[1].name == 'Sky Talk Anytime'
+		assert packageSectionDetails[1].type == 'talk'
+		assert packageSectionDetails[1].cost == '£5.00'
 
-		assert packageBreakdown[2].name == 'Fibre Unlimited'
-		assert packageBreakdown[2].type == 'broadband'
-		assert packageBreakdown[2].cost == '£16.40'
+		assert packageSectionDetails[2].name == 'Fibre Unlimited'
+		assert packageSectionDetails[2].type == 'broadband'
+		assert packageSectionDetails[2].cost == '£16.40'
 
 				
     	and: "The package breakdown contains the cost of the package"	
-		assert packageTotal.text() == "Sky package total: £71.40"
+		assert packageSectionTotal.text() == "Sky package total: £71.40"
+	}
+	
+	def "Customer bill contains call charges"(){
+		expect: "The call charges section has the correct title"
+		assert callChargesSectionTitle.text() == 'Call Charges'
+		
+		
+		
+		
+		
+		
+		
 	}
 
 			
