@@ -23,9 +23,10 @@
     
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 id="packageSectionTitle" class="panel-title">Your Sky Package</h3>
+        <strong id="packageSectionTitle">Your Sky Package</strong>
+  	    <a id="packageCollapse" class="pull-right collapselink" data-toggle="collapse" data-target="#packageDetailsPanel">Hide/Show Details</a>
       </div>
-      <div class="panel-body">
+      <div id="packageDetailsPanel" class="panel-body collapse in">
         <table id="packageDetails" class="table table-striped">
           <thead>
             <tr>
@@ -50,9 +51,10 @@
     
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 id="callChargesTitle" class="panel-title">Call Charges</h3>
+        <strong id="callChargesTitle">Call Charges</strong>
+  	    <a class="pull-right collapselink" data-toggle="collapse" data-target="#callDetailsPanel">Hide/Show Details</a>
       </div>
-      <div class="panel-body">
+      <div id="callDetailsPanel" class="panel-body collapse in">
         <table id="callCharges" class="table table-striped">
           <thead>
             <tr>
@@ -77,9 +79,10 @@
       
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 id="storeTitle" class="panel-title">Sky Store Charges</h3>
+        <strong id="storeTitle">Sky Store Charges</strong>
+  	    <a class="pull-right collapselink" data-toggle="collapse" data-target="#storePanel">Hide/Show Details</a>
       </div>
-      <div class="panel-body">
+      <div id="storePanel" class="panel-body collapse in">
         <row>
           <div class="col-md-6">
             <h4 id="rentalsTitle">Rentals</h4>	

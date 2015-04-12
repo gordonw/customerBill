@@ -20,19 +20,19 @@ class CustomerBillPage extends Page {
 		statementDates { $('p', id:'statementDates') }
 		totalDue { $('div', id:'totalDue') }
 
-		packageSectionTitle { $('h3', id:'packageSectionTitle') }
+		packageSectionTitle { $('strong', id:'packageSectionTitle') }
 		packageDetails {
 			$('table#packageDetails tbody tr').collect{  module SkyPackageElement, it  }
 		}
 		packageCost { $('div', id:'packageCost') }
 
-		callChargesSectionTitle { $('h3', id:'callChargesTitle') }
+		callChargesSectionTitle { $('strong', id:'callChargesTitle') }
 		callCharges {
 			$('table#callCharges tbody tr').collect{  module CallChargesElement, it  }
 		}
 		callCost{ $('div', id:'callCost') }
 
-		storeSectionTitle{ $('h3', id:'storeTitle') }
+		storeSectionTitle{ $('strong', id:'storeTitle') }
 		rentalsTitle{ $('h4', id:'rentalsTitle') }
 		rentalsItems {
 			$('table#rentals tbody tr').collect{  module StoreElement, it  }

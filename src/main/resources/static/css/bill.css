@@ -38,3 +38,8 @@
     font-weight: 600;
 	font-size: 120%;
 }
+
+.panel-heading>.collapselink{
+    cursor: pointer;
+	color: #FFF;
+}
