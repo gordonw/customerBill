@@ -14,14 +14,16 @@ class CustomerBillPage extends Page {
 	static at = { title == "My Bill" }
 
 	static content = {
-		totalDue { $("div", id:"totalDue") }
 		billTitle { $("h1", id:"billTitle") }
 		statementDates { $("p", id:"statementDates") }
+		totalDue { $("div", id:"totalDue") }
+					
 		packageSectionTitle { $("h3", id:"packageSectionTitle") }
 		packageDetails {
 			$("table#packageDetails tbody tr").collect{  module SkyPackageElement, it  }
 		}
 		packageCost { $("div", id:"packageCost") }
+		
 		callChargesSectionTitle { $("h3", id:"callChargesTitle") }
 		callCharges {
 			$("table#callCharges tbody tr").collect{  module CallChargesElement, it  }
