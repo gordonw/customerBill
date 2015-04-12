@@ -1,3 +1,3 @@
 
-driver = "htmlunit"
-baseUrl = "http://localhost:8080/"
+driver = 'htmlunit'
+baseUrl = 'http://localhost:8080/'

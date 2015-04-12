@@ -97,11 +97,11 @@ class CustomerBillSpec extends GebSpec {
 		assert storeSectionTitle.text() == 'Sky Store Charges'
 
 		and: 'The rentals section is displayed'
-		assert rentalsTitle.text() == "Rentals"
+		assert rentalsTitle.text() == 'Rentals'
 		verifyStoreItem( rentalsItems[0], ['50 Shades of Grey', '4.99'] )
 		
 		and: 'The buy and keep section is displayed'
-		assert buyTitle.text() == "Buy and Keep"
+		assert buyTitle.text() == 'Buy and Keep'
 		verifyStoreItem( buyAndKeepItems[0], ["That's what she said", '9.99'] )
 		verifyStoreItem( buyAndKeepItems[1], ['Broke back mountain', '9.99'] )	
 		

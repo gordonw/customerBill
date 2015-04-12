@@ -13,29 +13,29 @@ class CustomerBillController {
 
 	String endpoint = 'http://safe-plains-5453.herokuapp.com/bill.json'
 
-	@RequestMapping("/customerBill")
+	@RequestMapping('/customerBill')
 	String displayBill(Model model) {
 
 		String jsonTxt = endpoint.toURL().text
 		def json = new JsonSlurper().parseText(jsonTxt)
 
-		model.addAttribute("dueDate", convertToDisplayDate(json.statement.due) )
-		model.addAttribute("totalDue", json.total)
-		model.addAttribute("generatedDate", convertToDisplayDate(json.statement.generated))
-		model.addAttribute("fromDate", convertToDisplayDate(json.statement.period.from))
-		model.addAttribute("toDate", convertToDisplayDate(json.statement.period.to))
-		model.addAttribute("subscriptions", json.package.subscriptions)
-		model.addAttribute("packageTotal", json.package.total)
-		model.addAttribute("calls", json.callCharges.calls)
-		model.addAttribute("callTotal", json.callCharges.total)
-		model.addAttribute("rentals", json.skyStore.rentals)
-		model.addAttribute("buyAndKeep", json.skyStore.buyAndKeep)
-		model.addAttribute("storeTotal", json.skyStore.total)
+		model.addAttribute('dueDate', convertToDisplayDate(json.statement.due) )
+		model.addAttribute('totalDue', json.total)
+		model.addAttribute('generatedDate', convertToDisplayDate(json.statement.generated))
+		model.addAttribute('fromDate', convertToDisplayDate(json.statement.period.from))
+		model.addAttribute('toDate', convertToDisplayDate(json.statement.period.to))
+		model.addAttribute('subscriptions', json.package.subscriptions)
+		model.addAttribute('packageTotal', json.package.total)
+		model.addAttribute('calls', json.callCharges.calls)
+		model.addAttribute('callTotal', json.callCharges.total)
+		model.addAttribute('rentals', json.skyStore.rentals)
+		model.addAttribute('buyAndKeep', json.skyStore.buyAndKeep)
+		model.addAttribute('storeTotal', json.skyStore.total)
 
-		"customerBill"
+		'customerBill'
 	}
 
 	private String convertToDisplayDate(String inputDate){
-		Date.parse("yyyy-MM-dd", inputDate).format("dd/MM/yyyy")
+		Date.parse('yyyy-MM-dd', inputDate).format('dd/MM/yyyy')
 	}
 }
