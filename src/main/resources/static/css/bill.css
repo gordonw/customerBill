@@ -1,0 +1,40 @@
+.page-header {
+  margin: 20px;
+}
+
+.alert-info {
+ background: #0073C5;
+ color: #FFF;
+ font-size: 120%;
+}
+
+.table{
+  color: #575757;
+  font-weight: bold;
+}
+
+.table>tbody>tr>td, 
+.table>tbody>tr>th, 
+.table>tfoot>tr>td, 
+.table>tfoot>tr>th{
+    font-size: 80%;
+	padding: 5px;	
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #E6F1FE;
+ }
+
+.panel-default>.panel-heading{
+    background: #0073C5;
+	color: #FFF;
+    font-weight: bold;
+}
+
+.panel-default>.panel-footer{
+    background: #0073C5;
+	color: #FFF;
+    font-weight: 600;
+	font-size: 120%;
+}
