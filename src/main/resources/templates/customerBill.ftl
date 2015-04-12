@@ -80,42 +80,47 @@
         <h3 id="storeTitle" class="panel-title">Sky Store Charges</h3>
       </div>
       <div class="panel-body">
-        <h4 id="rentalsTitle">Rentals</h4>	
-        <table id="rentals" class="table table-striped">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Cost</th>
-            </tr>
-          </thead>
-          <tbody>
-          <#list rentals as rentalItem>
-            <tr>
-              <td>${rentalItem.title}</td>
-              <td>${rentalItem.cost}</td>
-            </tr>
-          </#list>
-          </tbody>
-        </table>
+        <row>
+          <div class="col-md-6">
+            <h4 id="rentalsTitle">Rentals</h4>	
+            <table id="rentals" class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Cost</th>
+                </tr>
+              </thead>
+              <tbody>
+              <#list rentals as rentalItem>
+                <tr>
+                  <td>${rentalItem.title}</td>
+                  <td>${rentalItem.cost}</td>
+                </tr>
+              </#list>
+              </tbody>
+            </table>
+          </div>
         
-        <h4 id="buyTitle">Buy and Keep</h4>	
- 	    
-        <table id="buyAndKeep" class="table table-striped">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Cost</th>
-            </tr>
-          </thead>
-          <tbody>
-          <#list buyAndKeep as purchasedItem>
-            <tr>
-              <td>${purchasedItem.title}</td>
-              <td>${purchasedItem.cost}</td>
-            </tr>
-          </#list>
-          </tbody>
-        </table>
+          <div class="col-md-6">
+            <h4 id="buyTitle">Buy and Keep</h4>	
+ 	        <table id="buyAndKeep" class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Cost</th>
+                </tr>
+              </thead>
+              <tbody>
+              <#list buyAndKeep as purchasedItem>
+                <tr>
+                  <td>${purchasedItem.title}</td>
+                  <td>${purchasedItem.cost}</td>
+                </tr>
+              </#list>
+              </tbody>
+            </table>
+          </div>
+        </row>  
         
       </div>
       <div id="storeCost" class="panel-footer">Sky store total: ${storeTotal?string.currency}</div>
